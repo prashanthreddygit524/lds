@@ -1,0 +1,28 @@
+<aura:component controller="schemaPicklist" >
+    <aura:attribute name="fields" type="String[]" default="[]" />
+    <aura:attribute name="selectedObject" type="String" />
+    <aura:attribute name="selectedField" type="String" />
+
+    <lightning:card title="Picklist Event" >
+        <lightning:select label="Select Object"  value="{!v.selectedObject}" onchange="{!c.show}">
+               <option value="none" >-None-</option>
+               <option value="Account">Account</option>
+               <option value="Contact">Contact</option>
+        </lightning:select>
+<br/> <br/>
+        <lightning:select label="Fields" value="{!v.selectedField}" >
+            <option value="none">-None-</option>
+            <aura:iteration items="{!v.fields}" var="a" >
+                    <option value="{!a}">{!a}</option>
+
+            </aura:iteration>
+
+
+        </lightning:select>
+
+
+    </lightning:card>
+
+   
+
+</aura:component>	
