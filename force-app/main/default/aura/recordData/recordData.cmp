@@ -1,0 +1,23 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome" access="global">
+	<aura:attribute name="acc" type="Object"/>
+    <aura:attribute name="newAcc" type="Object"/>
+    
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="Name,Description,Phone,Industry"
+    targetFields="{!v.acc}"
+    targetRecord="{!v.newAcc}"
+    mode="EDIT"
+    />
+    
+    <div> 
+        <lightning:card iconName="standard:account" title="Account" >
+            <div class="slds-p-horizontal--small">
+                <p><lightning:formattedText value="{!v.acc.Name}"/></p>
+                <p> <lightning:input title="Phone" value="{!v.acc.Phone}" /></p>
+                <p> <lightning:input title="Description" value="{!v.acc.Description}" /></p>
+                <p> <lightning:input title="Industry" value="{!v.acc.Industry}" /></p>
+            </div>
+        </lightning:card>
+    </div>
+</aura:component>

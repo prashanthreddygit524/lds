@@ -1,0 +1,14 @@
+<aura:component>
+<aura:attribute name="name" type="String" />
+<aura:attribute name="age" type="String" />
+
+
+<lightning:input label="lastname" type="text" />
+<lightning:input label="lastname" type="text" />
+<lightning:input label="lastname" type="text" />
+<lightning:input label="lastname" type="text" />
+
+Name: {v.name}
+age:{!v.age}
+
+ </aura:component>	

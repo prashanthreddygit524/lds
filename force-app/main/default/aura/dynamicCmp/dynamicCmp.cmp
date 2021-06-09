@@ -1,0 +1,4 @@
+<aura:component>
+<lightning:button label="Save" onclick="{!c.callMe}" />
+{!v.body}
+</aura:component>	

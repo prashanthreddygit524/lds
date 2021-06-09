@@ -1,0 +1,38 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="con" type="Object" />
+
+    <force:recordData recordId="{!v.recordId}"
+                    aura:id="rec"
+                    targetFields="{!v.con}"
+                    fields="FirstName,LastName,Phone"
+                    mode="EDIT"
+                    />
+
+    <lightning:card iconName="Standard:contact">
+        <aura:set attribute="title" >
+            {!v.con.FirstName}
+            Contact Edit
+
+        </aura:set>
+        <aura:set attribute="actions" >
+            <lightning:button label="Save" onclick="{!c.callMe}" />
+
+        </aura:set>
+<lightning:layout>
+        <lightning:layoutItem size="3" >
+            <lightning:input label="LastName" value="{!v.con.LastName}" />
+            
+        </lightning:layoutItem>
+        <lightning:layoutItem size="3" >
+            <lightning:input label="Phone" value="{!v.con.Phone}" />
+        </lightning:layoutItem>
+
+        <lightning:layoutItem size="3" >
+            <lightning:input label="Phone" value="{!v.con.Phone}" />
+        </lightning:layoutItem>
+
+</lightning:layout>
+
+    </lightning:card>
+
+</aura:component>	
